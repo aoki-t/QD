@@ -1,6 +1,6 @@
 # QD - A C++/Fortran-90 double-double and quad-double package
 
-***Note:*** QD library has written by Yozo Hida, Xiaoye S. Li and David H. Bailey and others in LBNL.  
+***Note:*** QD library has written by Yozo Hida, Xiaoye S. Li, David H. Bailey and others in LBNL.  
 This repository is ***UNOFFICIAL*** copy of official package to trace history.
 
 ##Introduction
