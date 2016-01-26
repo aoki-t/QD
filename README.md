@@ -1,6 +1,7 @@
 # QD - A C++/Fortran-90 double-double and quad-double package
 
-***Note:*** This repository is ***UNOFFICIAL*** copy of official package to trace history.
+***Note:*** QD library has written by Yozo Hida, Xiaoye S. Li and David H. Bailey and others in LBNL.  
+This repository is ***UNOFFICIAL*** copy of official package to trace history.
 
 ##Introduction
 This package supports both a double-double datatype (approx. 32 decimal digits) and a quad-double datatype (approx. 64 decimal digits). 
@@ -10,9 +11,9 @@ In most cases only a few type statements and (for Fortran-90 programs) read/writ
 PSLQ and numerical quadrature programs are included. 
 
 ##License
-It is 3-clause BSD license with LBNL clause.
+It is 3-clause BSD license with LBNL clause.  
 For details, please read LBNL-BSD-License.doc and README file in package.
 
 ##External link
-[High-Precision Software Directory(Official site)] (http://crd-legacy.lbl.gov/~dhbailey/mpdist/)
+[High-Precision Software Directory (Official site)] (http://crd-legacy.lbl.gov/~dhbailey/mpdist/)
 
