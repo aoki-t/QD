@@ -783,19 +783,40 @@ qd_real nroot(const qd_real &a, int n) {
      we only need to perform it twice.
 
    */
+	if (n <= 0) {
+		qd_real::error("(qd_real::nroot): N must be positive.");
+		return qd_real::_nan;
+	}
 
-  if (a == 0.0) {
-    return qd_real(0.0);
-  }
+	if (n % 2 == 0 && a.is_negative()) {
+		qd_real::error("(qd_real::nroot): Negative argument.");
+		return qd_real::_nan;
+	}
 
-  qd_real r = std::pow(a[0], -1.0/n);
+	if (n == 1) {
+		return a;
+	}
+	if (n == 2) {
+		return sqrt(a);
+	}
+	if (a.is_zero()) {
+		return qd_real(0.0);
+	}
 
-  double dbl_n = static_cast<double>(n);
-  r += r * (1.0 - a * (r ^ n)) / dbl_n;
-  r += r * (1.0 - a * (r ^ n)) / dbl_n;
-  r += r * (1.0 - a * (r ^ n)) / dbl_n;
 
-  return 1.0 / r;
+	/* Note  a^{-1/n} = exp(-log(a)/n) */
+	qd_real r = abs(a);
+	qd_real x = std::exp(-std::log(r.x[0]) / n);
+
+	/* Perform Newton's iteration. */
+	double dbl_n = static_cast<double>(n);
+	x += x * (1.0 - r * npwr(x, n)) / dbl_n;
+	x += x * (1.0 - r * npwr(x, n)) / dbl_n;
+	x += x * (1.0 - r * npwr(x, n)) / dbl_n;
+	if (a[0] < 0.0){
+		x = -x;
+	}
+	return 1.0 / x;
 }
 
 static const int n_inv_fact = 15;
