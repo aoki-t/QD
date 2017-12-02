@@ -1,3 +1,6 @@
+Changes for 2.3.18
+  - Updated qd_real.cpp and dd_real.cpp to fix a problem in output.
+
 Changes for 2.3.17
   - updated qd_real.cpp, to fix a problem with improper treatment of
   negative arguments in nroot.
