@@ -1,3 +1,7 @@
+Changes for 2.3.20
+    added #include <string.h> to quadt_test.cpp
+    changed references to 2.3.20 from 2.3.18
+
 Changes for 2.3.19
   - Updated qd_real.cpp and dd_real.cpp to fix a buffer overflow problem.
 
